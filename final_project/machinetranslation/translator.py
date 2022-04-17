@@ -30,7 +30,7 @@ def english_to_french(english_text):
     return french_text
 
 def french_to_english(french_text):
-    '''translates french texts to english texts''''
+    '''translates french texts to english texts'''
     # invokes translation instance
     language = translator_instance()
     # translates from french to english
