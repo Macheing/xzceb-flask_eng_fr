@@ -1,26 +1,21 @@
+'''Import Unit testing library and the module to be tested'''
 import unittest
-import translator
+from translator import english_to_french, french_to_english
 
 class TestTranslations(unittest.TestCase):
     '''Test translation from english to French and vice versa'''
 
     def test_english_to_french(self):
         '''translates english to french'''
-        self.assertEqual(translator.english_to_french(''),'')
-        self.assertEqual(translator.english_to_french('Hello'),
-                          'Bonjour')
-        self.assertEqual(translator.english_to_french('Hello friends'),
-                          "Bonjour les amis")
-        
-
+        self.assertEqual(english_to_french(''),'')
+        self.assertEqual(english_to_french('Hello'),'Bonjour')
+        self.assertEqual(english_to_french("Hello friends"),"Bonjour amis")
 
     def test_french_to_english(self):
         '''translates french to english'''
-        self.assertEqual(translator.french_to_english(''),'')
-        self.assertEqual(translator.french_to_english('Bonjour'),
-                         'Hello')
-        self.assertEqual(translator.french_to_english("Bonjour les amis"),
-                         'Hello friends')
+        self.assertEqual(french_to_english(''),'')
+        self.assertEqual(french_to_english('Bonjour'),'Hello')
+        self.assertEqual(french_to_english("Bonjour amis"),'Hello friends')
 
 if __name__ == '__main__':
     unittest.main()
