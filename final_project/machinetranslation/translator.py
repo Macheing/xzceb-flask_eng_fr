@@ -16,11 +16,10 @@ def translator_instance():
     # authenticate user
     authenticator = IAMAuthenticator(api_key)
     # create instance of service
-    language = LanguageTranslatorV3(version='2021-08-01', authenticator=authenticator)
+    language_tr = LanguageTranslatorV3(version='2021-08-01', authenticator=authenticator)
     # set service url to api url
-    language.set_service_url(api_url)
-    #language.set_disable_ssl_verification(True)
-    return language
+    language_tr.set_service_url(api_url)
+    return language_tr
 
 def english_to_french(english_text):
     '''translates english phrases to french'''
